@@ -4,8 +4,6 @@
   let innerHeight = 0;
 
   // STEP MAPPING:
-  // 300vh per step gives the card 100vh to enter, 100vh to stay, and 100vh to exit 
-  // while the map remains stationary.
   $: currentStep = Math.floor(scrollY / (innerHeight * 3)); 
 </script>
 
@@ -34,7 +32,7 @@
 <div class="map-container" style:opacity={currentStep >= 2 ? 1 : 0}>
   
   <img 
-    src="./Assets/base_with_area.png" 
+    src="./Assets/two_state.png" 
     alt="Regional" 
     class="map-layer" 
     style:opacity={currentStep === 2 ? 1 : 0} 
@@ -56,7 +54,7 @@
 
   <img 
     src="./Assets/base_area_riv.png" 
-    alt="Gopinatham" 
+    alt="Gopinatham River" 
     class="map-layer" 
     style:opacity={currentStep === 5 ? 1 : 0} 
   />
@@ -73,11 +71,24 @@
     <track kind="captions" />
   </video>
 
-  <img 
-    src="./Assets/end_map.png" 
-    alt="Endgame" 
+  
+   <img 
+    src="./Assets/Dum.png" 
+    alt="Gopinatham River" 
     class="map-layer" 
     style:opacity={currentStep === 7 ? 1 : 0} 
+  />
+
+   <div 
+    class="map-layer solid-green-bg" 
+    style:opacity={currentStep === 8 ? 1 : 0}>
+  </div>
+
+  <img 
+    src="./Assets/end_game.png" 
+    alt="Endgame" 
+    class="map-layer" 
+    style:opacity={currentStep === 9 ? 1 : 0} 
   />
 </div>
 
@@ -88,14 +99,14 @@
   <section class="long-step">
     <div class="text-card">
       <h1>The Southern Frontier</h1>
-      <p>The hunt spanned the <strong>tri-state border</strong> a landscape where administrative lines were as tangled as the forest itself. For decades, these lines were the state's only tool.</p>
+      <p>The hunt spanned the <strong>two-state border</strong> a landscape where administrative lines were as tangled as the forest itself. For decades, these lines were the state's only tool.</p>
     </div>
   </section>
 
   <section class="long-step">
     <div class="text-card">
       <h1>The Empire of Forests</h1>
-      <p> Between these states lies a large, connected forest landscape. Police accounts in the 1990s put his primary operating zone at roughly <strong>6,000 sq km (est.) of terrain </strong> that provided a natural "stealth mode" where aerial surveillance failed against the dense canopy.</p>
+      <p> Between these states lies a large, connected forest landscape. Police accounts in the 1990s put his primary operating zone at roughly <strong>15,000 sq km (est.) of terrain </strong> that provided a natural "stealth mode" where aerial surveillance failed against the dense canopy.</p>
     </div>
   </section>
 
@@ -106,7 +117,7 @@
     </div>
   </section>
 
-    <section class="long-step">
+  <section class="long-step">
     <div class="text-card highlight">
       <h1>Jurisdiction Game</h1>
       <p> He played the "Jurisdictional Game." When Karnataka police chased him, he simply rafted 100 meters across the water into Tamil Nadu. The police, bound by state laws, had to stop at the bank. He didn't hide in the trees; he hid in the blind spots of bureaucracy. </p>
@@ -122,8 +133,27 @@
 
   <section class="long-step">
     <div class="text-card highlight">
+      <h1>The "Forest King"</h1>
+      <p> Veerappan didn’t just survive the jungle; he weaponized the poverty within it. To the outside world, he was a smuggler. But inside that 15,000 sq km bubble, he became the "Forest King". He became the primary employer through his smuggling syndicate. He became the local justice system, ruling through a terrifying mix of Robin Hood-style patronage and brutal executions. </p>
+    </div>
+  </section>
+
+  <section class="long-step">
+    <div class="intermission-text">
+      <h2>The Cost of Trust</h2>
+      <p>
+        While the state brought helicopters, one man brought humanity. <strong>P. Srinivas</strong>, an Indian Forest Service officer, took an entirely different approach. Instead of raiding the villages, he rebuilt their ruined temple, started a medical dispensary, and gave the locals honest jobs. 
+      </p>
+      <p>
+        By treating the villagers as citizens rather than suspects, Srinivas began dismantling the <strong>"Forest King's"</strong> socio-cultural shield, gaining the one thing the police never had: <strong>the locals' trust</strong>. Recognizing this as an existential threat, Veerappan tricked Srinivas into an unarmed meeting and brutally murdered him in 1991. It was tragic proof that the true battleground wasn't the forest; it was the people.
+      </p>
+    </div>
+  </section>
+
+  <section class="long-step">
+    <div class="text-card highlight">
       <h1>The End Game</h1>
-      <p> On 18 October 2004, Veerappan was killed in an STF operation (often referred to as Operation Cocoon) near Papparapatti in Dharmapuri district, Tamil Nadu, after being lured out under the pretext of medical treatment in an ambulance. <strong>The end came fast once he was outside the terrain that had protected him.</strong> </p>
+      <p> Operation Cocoon finally worked because the police realized they couldn't beat him inside his own ecosystem. They couldn't out-navigate him in the terrain, and they couldn't break his socio-cultural grip on the locals. The only way to win was to sever him from both. They lured him out of the canopy and away from his people, ending a 20-year reign on an empty, paved road.</p>
     </div>
   </section>
 </div>
@@ -137,7 +167,7 @@
     overflow-x: hidden;
   }
 
-  /* INTRO: #e5faad Background */
+  /* INTRO */
   .intro-screen {
     position: fixed;
     top: 0;
@@ -167,7 +197,7 @@
   .intro-paragraph { font-size: 1.5rem; color: #383838; line-height: 1.7; opacity: 0.9; }
   .intro-scroll-hint { margin-top: 4rem; color: #383838; letter-spacing: 0.1rem; font-size: 0.9rem; font-weight: 500; opacity: 0.5; }
 
-  /* MAP SYSTEM (The stationary background) */
+  /* MAP SYSTEM */
   .map-container {
     position: sticky;
     top: 0;
@@ -184,15 +214,20 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* 1.4s weighted cross-fade for the Shifting Grounds feel */
     transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* NARRATIVE SCROLLING (The traveling cards) */
+  /* The Solid Green Map Layer */
+  .solid-green-bg {
+    background-color: #e5faad;
+    z-index: 0;
+  }
+
+  /* NARRATIVE SCROLLING */
   .content { position: relative; z-index: 10; }
   
   .long-step {
-    height: 300vh; /* Increased to ensure the map stays static while the card travels */
+    height: 300vh; 
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -208,11 +243,35 @@
     max-width: 550px;
     border-radius: 2px;
     box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-    /* Shifting Grounds card entry/exit fade */
     transition: opacity 0.8s ease, transform 1s ease-out;
   }
 
   h1 { font-size: 2.2rem; margin-top: 0; font-weight: 800; color: #000; margin-bottom: 1.5rem; letter-spacing: -1px; }
-  /*.highlight h1 { border-bottom: 5px solid #FF4500; } */
   p { line-height: 1.8; font-size: 1.3rem; color: #333; margin: 0; }
+
+  /* Styling for the Intermission Text (No shadows or background) */
+  .intermission-text {
+    max-width: 800px;
+    text-align: center;
+    color: #2c2c2c;
+    padding: 2rem;
+  }
+
+  .intermission-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .intermission-text p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+  }
+
+  .intermission-text strong {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
 </style>
