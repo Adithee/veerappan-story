@@ -13,16 +13,17 @@
   <div class="intro-content">
     
     <div class="intro-text-wrapper" style:opacity={currentStep === 0 ? 1 : 0}>
-      <h1 class="intro-title">The Hunt for Veerappan</h1>
+      <h1 class="intro-title">The Veerappan Story</h1>
+      <p class="intro-paragraph">He was a poacher. A smuggler. A murderer wanted by two states. He was also the reason this forest survived.</p>
       <div class="intro-scroll-hint">Scroll to follow the trail</div>
     </div>
 
     <div class="intro-text-wrapper" style:opacity={currentStep === 1 ? 1 : 0}>
       <h2 class="intro-subtitle">The Man and the Manhunt</h2>
       <p class="intro-paragraph">
-      <strong>Koose Munisamy Veerappan</strong> was a master of the jungle who eluded the Special Task Forces for over twenty years. 
-      Wanted for <strong>poaching, smuggling, and murder,</strong> he became the center of a manhunt that spilled across state lines. 
-      But his true shield wasn't just the villagers, but it was his understanding of the <strong>forest and loopholes</strong> within the state bureaucracy.
+      For over twenty years, <strong>Koose Munisamy Veerappan</strong> ran a criminal empire from inside this forest. 
+      Wanted for poaching, smuggling, and over 184 murders, he became the <strong>most hunted man in India.</strong> 
+      Thousands of officers. Helicopters, informants, special task forces. None of it worked.
       </p>
     </div>
 
@@ -90,6 +91,13 @@
     class="map-layer" 
     style:opacity={currentStep === 9 ? 1 : 0} 
   />
+
+<img 
+    src="./Assets/tree_cv.png" 
+    alt="Endgame" 
+    class="map-layer" 
+    style:opacity={currentStep === 10 ? 1 : 0} 
+  />  
 </div>
 
 <div class="content">
@@ -99,7 +107,7 @@
   <section class="long-step">
     <div class="text-card">
       <h1>The Southern Frontier</h1>
-      <p>The hunt spanned the <strong>two-state border</strong> a landscape where administrative lines were as tangled as the forest itself. For decades, these lines were the state's only tool.</p>
+      <p>The hunt spanned the <strong>two-state border</strong> a landscape where administrative lines were as tangled as the forest itself.</p>
     </div>
   </section>
 
