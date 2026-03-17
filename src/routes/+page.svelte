@@ -14,7 +14,7 @@
     
     <div class="intro-text-wrapper" style:opacity={currentStep === 0 ? 1 : 0}>
       <h1 class="intro-title">The Veerappan Story</h1>
-      <p class="intro-paragraph">He was a poacher. A smuggler. A murderer wanted by two states. He was also the reason this forest survived.</p>
+      <p class="intro-paragraph">He was a poacher. A smuggler. A murderer wanted by two states. But was also the reason this forest survived.</p>
       <div class="intro-scroll-hint">Scroll to follow the trail</div>
     </div>
 
@@ -164,6 +164,14 @@
       <p> Operation Cocoon finally worked because the police realized they couldn't beat him inside his own ecosystem. They couldn't out-navigate him in the terrain, and they couldn't break his socio-cultural grip on the locals. The only way to win was to sever him from both. They lured him out of the canopy and away from his people, ending a 20-year reign on an empty, paved road.</p>
     </div>
   </section>
+
+ <section class="long-step">
+    <div class="text-card highlight">
+      <h1>"What happened to the forest"</h1>
+      <p> Here is the forest in 2000 vs the same forest in 2010. Six years after his death. For decades, Veerappan’s presence made the MM Hills a "no-go" zone for state. While he poached ivory and sandalwood, his violence inadvertently shielded the core forest from large-scale development. Human encroachment and infrastructure are now thining the margins of a terrain once protected by terror. </p>
+    </div>
+  </section>
+
 </div>
 
 <style>
